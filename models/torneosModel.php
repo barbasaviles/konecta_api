@@ -7,4 +7,8 @@ class torneosModel extends \Framework\Model
         $sql = "SELECT * FROM public.t_torneos";
         return pg_fetch_all(pg_query($sql));
     }
+
+    public function deportistasTop(){
+
+    }
 }
