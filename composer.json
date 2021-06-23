@@ -1,0 +1,23 @@
+{
+    "name": "barbas/fireplayer-restfull",
+    "description": "restfull app movil",
+    "license": "privada",
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "logica/",
+            "Framework\\Controllers\\": "controllers/",
+            "Framework\\Models\\": "models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "barbas",
+            "email": "ing.gabriel.aviles@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "monolog/monolog": "^2.0",
+        "pomm-project/foundation": "^2.0"
+    }
+}
