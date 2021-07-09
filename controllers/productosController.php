@@ -44,4 +44,31 @@ class productosController extends \Framework\Controller
         $this->modelo->eliminar($id);
     }
 
+    public function ventas()
+    {
+        $id = request::getInt("id");
+        return $this->modelo->ventas($id);
+    }
+
+    public function venta()
+    {
+        $id = Request::getInt('id');
+        $can = Request::getInt("can");
+        $total = Request::getInt("total");
+
+        $params = [
+                'id_producto' => $id,
+                'cantidad' => $can,
+                'total' => $total
+            ];
+        if($this->modelo->validarStock($id,$can)) {
+            $this->modelo->venta($params);
+            Response::all('nuevo', 'success', "Venta registrada");
+        }else{
+            Response::all('nuevo', 'warning', "la cantidad que desea vender supera el maximo en Stock");
+        }
+
+        return Response::salida();
+    }
+
 }
