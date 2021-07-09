@@ -24,7 +24,7 @@ class productosModel extends \Framework\Model
             $sql = "INSERT INTO ventas(id_producto,cantidad,total) VALUES(".$params['id_producto'].",".$params['cantidad'].",".$params['total'].")";
             $result =mysqli_query($this->link,$sql);
 
-            $sql_descuento = "UPDATE productos SET stock=(stock-".$params['cantidad'].") WHERE id=".$params['id_producto'];
+            $sql_descuento = "UPDATE productos SET stock=(stock-".$params['cantidad']."), fecha_ultima_venta=now() WHERE id=".$params['id_producto'];
             $result =mysqli_query($this->link,$sql_descuento);
     }
 
