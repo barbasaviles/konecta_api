@@ -20,7 +20,7 @@ class productosModel extends \Framework\Model
         }
     }
 
-    public function eliminar(int $id){
+    public function eliminar(int $id = null){
         mysqli_query($this->link,"DELETE FROM productos WHERE id=$id");
     }
 }
