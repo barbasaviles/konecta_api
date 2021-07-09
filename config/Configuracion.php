@@ -1,4 +1,4 @@
 <?php
 
 define('DEBUG_MODE', TRUE);
-define('DEBUG_PORT', 5432);
+define('DEBUG_PORT', 3306);

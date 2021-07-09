@@ -14,54 +14,22 @@ use Framework\Session;
 abstract class Model extends \Framework\Loader {
 
     protected $db;
+    protected $link;
     protected $pomm;
     protected $log;
 
     public function __construct() {
         $dsn = $this->getConnections();
-//        $this->pomm = new Pomm([
-//            'instance' => ['dsn' => $dsn['instance']],
-//            'login' => ['dsn' => $dsn['login']]
-//        ]);
-
-//        $session = $this->pomm->getSession('instance');
-//        $this->db = $session->getQueryManager();
-//        $uuid_keycloak = Session::get('sub');
-//        $rol =  Session::get('roles')[0];
-//        $this->db->query("SET SESSION fp.uuid_keycloak = '$uuid_keycloak'");
-//        $this->db->query("SET SESSION fp.nom_rol = '$rol'");
-//        $this->log = Logger::$log;
     }
 
     private function getConnections() {
 
-        $raw_conn_string = 'host=:host port=:port dbname=:dbname user=:user password=:password';
-        $params = [
-            ':host' => DB_HOST,
-            ':port' => DB_PORT, ':dbname' => DB_NAME,
-            ':user' => DB_USER, ':password' => DB_PASS
-        ];
-
-        $connection = @pg_connect(strtr($raw_conn_string, $params));
+        $connection = new \mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
         if (!$connection) {
             http_response_code(500);
             throw new \Exception('Ocurrió un problema al conectar a la base de datos');
         }
-
-//        $port = DEBUG_PORT ?? 'puerto';
-//        $sql = "SELECT concat('pgsql://', usuario_db, ':', contrasenia_db, '@', servidor, ':', $port , '/', nombre_db) dsn
-//        FROM t_instancias WHERE uuid = $1";
-//        $result = pg_query_params($connection, $sql, [Session::get('conn')]);
-//        if (pg_last_error() || !$result || !pg_num_rows($result)) {
-//            http_response_code(500);
-//            throw new \Exception('No se pudo obtener la instancia para esta base de datos');
-//        }
-//
-//        $dsn = [];
-//        $dsn['instance'] = pg_fetch_result($result, 0, 'dsn');
-//        $dsn['login'] = strtr('pgsql://:user::password@:host::port/:dbname', $params);
-//
-//        return $dsn;
+        $this->link = $connection;
     }
 
     protected function verificarUnicidad($tabla, $registros, $llave_primaria = NULL) {

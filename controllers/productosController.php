@@ -1,10 +1,10 @@
 <?php
 
 
-class torneosController extends \Framework\Controller
+class productosController extends \Framework\Controller
 {
-    public function productos(){
-        return $this->modelo->productos();
+    public function inventario(){
+        return $this->modelo->inventario();
     }
 
 }

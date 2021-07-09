@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b517dfdf0999dffe27d9a67054e3585",
+    "content-hash": "6ab19e9e3531b37a2612ea95937dbbd3",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "5c9d9bf43e3328c7d38e14ae8e53782967109984"
+                "reference": "19542ed8efd4b9cf94eb1c697d46e98448046753"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5c9d9bf43e3328c7d38e14ae8e53782967109984",
-                "reference": "5c9d9bf43e3328c7d38e14ae8e53782967109984",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/19542ed8efd4b9cf94eb1c697d46e98448046753",
+                "reference": "19542ed8efd4b9cf94eb1c697d46e98448046753",
                 "shasum": ""
             },
             "require": {
@@ -36,7 +36,7 @@
                 "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
                 "phpspec/prophecy": "^1.6.1",
-                "phpstan/phpstan": "^0.12.59",
+                "phpstan/phpstan": "^0.12.91",
                 "phpunit/phpunit": "^8.5",
                 "predis/predis": "^1.1",
                 "rollbar/rollbar": "^1.3",
@@ -101,7 +101,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-28T08:33:21+00:00"
+            "time": "2021-07-08T13:23:09+00:00"
         },
         {
             "name": "pomm-project/foundation",

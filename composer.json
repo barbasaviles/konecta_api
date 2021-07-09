@@ -1,6 +1,6 @@
 {
-    "name": "barbas/fireplayer-restfull",
-    "description": "restfull app movil",
+    "name": "konecta/productos",
+    "description": "Inventario de productos",
     "license": "privada",
     "autoload": {
         "psr-4": {
