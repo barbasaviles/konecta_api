@@ -43,10 +43,10 @@ abstract class request
     }
 
     public static function getString(string $path, int $size = null) {
-        return Filters::filterString(Filters::filterArrayPath($path, self::$http_params), $size);
+        return filters::filterString(Filters::filterArrayPath($path, self::$http_params), $size);
     }
 
     public static function getInt(string $path, array $options = ['default' => null, 'min_range' => 1]) {
-        return Filters::filterInt(Filters::filterArrayPath($path, self::$http_params), $options);
+        return filters::filterInt(Filters::filterArrayPath($path, self::$http_params), $options);
     }
 }

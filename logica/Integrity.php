@@ -39,7 +39,7 @@ class Integrity extends Loader
     {
         return null;
         $filter = 'filter' . ucfirst($type);
-        return is_callable(['Framework\Filters', $filter]) ? $filter : null;
+        return is_callable(['Framework\filters', $filter]) ? $filter : null;
     }
 
     private function reflectionCheckTypeParams(\ReflectionMethod $reflect, $arguments)
